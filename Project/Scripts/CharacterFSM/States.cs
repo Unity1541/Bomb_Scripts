@@ -16,7 +16,7 @@ public class States//先定義所需要的控制器以及用到狀態，和會�
     public Vector3 gravityVelocity;
     public Vector3 velocity;
     public States(CharacterController _character, StateMachine _stateMachine)
-	{
+	{//這邊的參數會由各個State用Base給訂參數
         characterController = _character;
         stateMachine = _stateMachine;
         moveAction = characterController.playerInput.actions["Move"];

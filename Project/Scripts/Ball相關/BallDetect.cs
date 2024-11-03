@@ -11,7 +11,7 @@ public class BallDetect : MonoBehaviour
    //public UnityEvent OnScoreUpdated;
    //被觸發的事件,如果不是prefab就可以直接在inspector來拖曳放入，但現在是prefab一開始要先找到東西
    public UnityEvent<int,float> OnScoreUpdated;//如果加入的方法需要加入參數的時候，要先預訂變數的型態才可以
-   void Start()
+   void Start()//這邊要注意，如果有兩個以上的參數event,則inspector無法直接輸入，而是只能在Invoke自行輸入
    {
         OnScoreUpdated.AddListener(GameObject.Find("InterFace").GetComponent<ScoreSystem>().calculate);
     //這邊AddListener是方法的引用，不是調用，因此不寫calculate()。找到後等Invoke()之後再使用方法
